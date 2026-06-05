@@ -12,6 +12,10 @@ export default [
       "@typescript-eslint/array-type": "off",
       "@typescript-eslint/require-await": "off",
       "pnpm/json-enforce-catalog": "off",
+      // Defensive runtime checks against data the type system treats as
+      // non-null (registry lookups, import.meta.env, request headers).
+      "@typescript-eslint/no-unnecessary-condition": "off",
+      "@typescript-eslint/no-unnecessary-type-assertion": "off",
     },
   },
   {

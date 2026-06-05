@@ -1,0 +1,52 @@
+---
+title: THEME – branding
+slug: theme
+order: 5
+updated: 2026-06-05
+appliesTo: SimpTrack 1.0
+description: Adapt colors and appearance to the customer's brand.
+---
+
+The optional `THEME` key adapts the appearance to the customer's corporate
+design. Without `THEME`, SimpTrack uses its default design.
+
+```php
+$CONFIG['THEME'] = [
+  'primary'   => '#a0ce4e',
+  'radius'    => '0.5rem',
+  'density'   => 'comfortable',
+];
+```
+
+<ParamTable
+  rows={[
+    {
+      name: "primary",
+      type: "string (hex)",
+      default: "'#a0ce4e'",
+      description: "Accent color for buttons, active states and links.",
+    },
+    {
+      name: "radius",
+      type: "string",
+      default: "'0.5rem'",
+      description: "Corner radius of surface elements.",
+    },
+    {
+      name: "density",
+      type: "'comfortable' | 'compact'",
+      default: "'comfortable'",
+      description: "Row height of the table.",
+    },
+    {
+      name: "logo",
+      type: "string (url)",
+      description: "Optional logo in the widget header.",
+    },
+  ]}
+/>
+
+<Callout type="tip">
+  Choose a `primary` color with sufficient contrast so text on colored buttons
+  stays legible.
+</Callout>

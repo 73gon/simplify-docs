@@ -1,0 +1,31 @@
+---
+title: Auf neue Version aktualisieren
+slug: updating
+order: 7
+updated: 2026-06-05
+appliesTo: SimpTrack 1.0
+description: Ein neues Release einspielen, ohne die Konfiguration zu verlieren.
+---
+
+Ein Update tauscht die Programmdateien aus – Ihre `config.php` bleibt erhalten.
+
+<Steps>
+  <Step title="config.php sichern">
+    Erstellen Sie vorsichtshalber eine Kopie der aktuellen `config.php`.
+  </Step>
+  <Step title="Dateien ersetzen">
+    Entpacken Sie das neue Release-Zip über den bestehenden Ordner.
+    **Überschreiben Sie `config.php` nicht** mit der Beispieldatei aus dem Zip.
+  </Step>
+  <Step title="Dashboard prüfen">
+    Öffnen Sie das Dashboard und prüfen Sie, ob das Widget wie gewohnt lädt.
+  </Step>
+</Steps>
+
+<Callout type="warning">
+  Lesen Sie vor einem Update die Release Notes. Neue Versionen können
+  zusätzliche optionale Schlüssel einführen; Pflichtschlüssel bleiben
+  abwärtskompatibel.
+</Callout>
+
+Eine Übersicht der Änderungen je Version finden Sie im Changelog des Produkts.

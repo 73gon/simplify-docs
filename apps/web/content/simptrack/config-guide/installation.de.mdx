@@ -1,0 +1,37 @@
+---
+title: Installation
+slug: installation
+order: 1
+updated: 2026-06-05
+appliesTo: SimpTrack 1.0
+description: SimpTrack als Release-Zip in JobRouter bereitstellen.
+---
+
+SimpTrack wird als **fertiges Release-Zip** ausgeliefert. Beim Kunden ist **kein
+Build-Schritt** nötig – kein Bun, kein Node, kein npm.
+
+<Steps>
+<Step title="Release herunterladen">
+Laden Sie das aktuelle Release-Zip (`Simptrack-vX.Y.Z.zip`) aus den GitHub
+Releases.
+</Step>
+<Step title="In JobRouter ablegen">
+Entpacken Sie den Inhalt nach
+`<jobrouter>/dashboard/MyWidgets/Simptrack/`. Den Ordner können Sie bei Bedarf
+umbenennen, falls der Kunde einen anderen Widget-Namen wünscht.
+</Step>
+<Step title="config.php anpassen">
+Passen Sie `config.php` an Ihre Umgebung an – siehe
+[config.php – Überblick](/simptrack/config-guide/config-overview).
+</Step>
+<Step title="Im Dashboard testen">
+Öffnen Sie das Dashboard. Schlägt die Prüfung fehl, zeigt das Widget eine klare
+Fehlermeldung – siehe [Fehlermeldungen lesen](/simptrack/config-guide/errors).
+</Step>
+</Steps>
+
+<Callout type="note">
+  SimpTrack ist als ausgeliefertes Widget **kodiert**. Sie konfigurieren das
+  Verhalten ausschließlich über `config.php`; an der übrigen Anwendung sind
+  keine Änderungen nötig oder vorgesehen.
+</Callout>

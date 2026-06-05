@@ -1,0 +1,71 @@
+---
+title: FIELD_MAP – columns & filters
+slug: field-map
+order: 3
+updated: 2026-06-05
+appliesTo: SimpTrack 1.0
+description: Define columns and enable filters with the compact syntax.
+---
+
+`FIELD_MAP` defines **which columns** are shown and **how** they are labelled. In
+its simplest form it maps a field name to a display name:
+
+```php
+$CONFIG['FIELD_MAP'] = [
+  'BELEGNUMMER' => 'Doc no.',
+  'LIEFERANT'   => 'Vendor',
+  'BETRAG'      => 'Amount',
+  'FAELLIG_AM'  => 'Due date',
+];
+```
+
+## Column with options
+
+Instead of a string, the value can be an array of options:
+
+```php
+$CONFIG['FIELD_MAP'] = [
+  'BETRAG' => [
+    'label'  => 'Amount',
+    'align'  => 'right',
+    'filter' => 'range',
+  ],
+];
+```
+
+## Available column options
+
+<ParamTable
+  rows={[
+    {
+      name: "label",
+      type: "string",
+      description: "Display name of the column.",
+    },
+    {
+      name: "align",
+      type: "'left' | 'right' | 'center'",
+      default: "'left'",
+      description: "Text alignment within the column.",
+    },
+    {
+      name: "filter",
+      type: "string",
+      description: "Filter type (see filter shorthand).",
+    },
+    {
+      name: "hidden",
+      type: "bool",
+      default: "false",
+      description: "Hide the column but keep it available for filter/export.",
+    },
+  ]}
+/>
+
+<Callout type="tip">
+  The order of entries in `FIELD_MAP` determines the default column order. Users
+  can then rearrange them via drag-and-drop.
+</Callout>
+
+The shorthand for filters is described under
+[Filter shorthand](/simptrack/config-guide/filter-shorthand).

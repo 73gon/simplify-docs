@@ -1,0 +1,49 @@
+---
+title: ROW_ACTIONS – Zeilenaktionen
+slug: row-actions
+order: 6
+updated: 2026-06-05
+appliesTo: SimpTrack 1.0
+description: Aktionsbuttons pro Zeile konfigurieren.
+---
+
+`ROW_ACTIONS` definiert die Buttons in der Aktionsspalte jeder Zeile. Ohne diesen
+Schlüssel werden keine Zeilenaktionen angezeigt.
+
+```php
+$CONFIG['ROW_ACTIONS'] = [
+  ['type' => 'history', 'label' => 'Verlauf'],
+  ['type' => 'invoice', 'label' => 'Rechnung'],
+  ['type' => 'log',     'label' => 'Protokoll'],
+];
+```
+
+## Aktionsoptionen
+
+<ParamTable
+  rows={[
+    {
+      name: "type",
+      type: "'history' | 'invoice' | 'log'",
+      required: true,
+      description: "Die auszuführende Standardaktion.",
+    },
+    {
+      name: "label",
+      type: "string",
+      required: true,
+      description: "Beschriftung des Buttons.",
+    },
+    {
+      name: "roles",
+      type: "string[]",
+      description: "Auf bestimmte Rollen einschränken (siehe ROW_AUTH).",
+    },
+  ]}
+/>
+
+<Callout type="note">
+  Sichtbarkeit und Verfügbarkeit von Aktionen können zusätzlich über
+  Berechtigungen gesteuert werden. Fehlt einem Anwender die Berechtigung, wird
+  der Button ausgeblendet.
+</Callout>

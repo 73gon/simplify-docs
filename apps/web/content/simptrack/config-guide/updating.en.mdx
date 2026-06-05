@@ -1,0 +1,30 @@
+---
+title: Updating to a new version
+slug: updating
+order: 7
+updated: 2026-06-05
+appliesTo: SimpTrack 1.0
+description: Apply a new release without losing your configuration.
+---
+
+An update replaces the program files — your `config.php` is preserved.
+
+<Steps>
+  <Step title="Back up config.php">
+    As a precaution, make a copy of the current `config.php`.
+  </Step>
+  <Step title="Replace the files">
+    Extract the new release zip over the existing folder. **Do not overwrite
+    `config.php`** with the example file from the zip.
+  </Step>
+  <Step title="Check the dashboard">
+    Open the dashboard and verify that the widget loads as usual.
+  </Step>
+</Steps>
+
+<Callout type="warning">
+  Read the release notes before updating. New versions may introduce additional
+  optional keys; required keys remain backward compatible.
+</Callout>
+
+A per-version overview of changes is available in the product changelog.

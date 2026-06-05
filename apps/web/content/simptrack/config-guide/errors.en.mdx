@@ -1,0 +1,56 @@
+---
+title: Reading error messages
+slug: errors
+order: 8
+updated: 2026-06-05
+appliesTo: SimpTrack 1.0
+description: Understand and fix configuration errors.
+---
+
+If configuration validation fails, SimpTrack shows a clear message in the
+dashboard naming the affected key — instead of an empty widget.
+
+## Typical messages
+
+<ParamTable
+  rows={[
+    {
+      name: "DATA_VIEW missing",
+      type: "Required",
+      description: "DATA_VIEW is not set. Enter the view/table.",
+    },
+    {
+      name: "FIELD_MAP empty",
+      type: "Required",
+      description: "FIELD_MAP contains no columns. Define at least one column.",
+    },
+    {
+      name: "Unknown filter type",
+      type: "FIELD_MAP",
+      description:
+        "A 'filter' value is invalid. Allowed: text, select, range, date, bool.",
+    },
+    {
+      name: "Unknown action type",
+      type: "ROW_ACTIONS",
+      description: "A 'type' is invalid. Allowed: history, invoice, log.",
+    },
+  ]}
+/>
+
+## How to proceed
+
+<Steps>
+  <Step title="Read the message">
+    The message names the affected key and the problem.
+  </Step>
+  <Step title="Fix config.php">
+    Adjust the named key. Watch for typos in field and filter names.
+  </Step>
+  <Step title="Reload">Reload the dashboard to re-run validation.</Step>
+</Steps>
+
+<Callout type="info">
+  If a message stays unclear, contact simplify-services support with the exact
+  wording and the relevant snippet from `config.php`.
+</Callout>

@@ -1,0 +1,61 @@
+---
+title: Fehlermeldungen lesen
+slug: errors
+order: 8
+updated: 2026-06-05
+appliesTo: SimpTrack 1.0
+description: Konfigurationsfehler verstehen und beheben.
+---
+
+Schlägt die Prüfung der Konfiguration fehl, zeigt SimpTrack im Dashboard eine
+klare Meldung mit dem betroffenen Schlüssel an – statt eines leeren Widgets.
+
+## Typische Meldungen
+
+<ParamTable
+  rows={[
+    {
+      name: "DATA_VIEW fehlt",
+      type: "Pflichtfeld",
+      description:
+        "DATA_VIEW ist nicht gesetzt. Tragen Sie die View/Tabelle ein.",
+    },
+    {
+      name: "FIELD_MAP leer",
+      type: "Pflichtfeld",
+      description:
+        "FIELD_MAP enthält keine Spalten. Definieren Sie mindestens eine Spalte.",
+    },
+    {
+      name: "Unbekannter Filtertyp",
+      type: "FIELD_MAP",
+      description:
+        "Ein 'filter'-Wert ist ungültig. Erlaubt: text, select, range, date, bool.",
+    },
+    {
+      name: "Unbekannter Aktionstyp",
+      type: "ROW_ACTIONS",
+      description: "Ein 'type' ist ungültig. Erlaubt: history, invoice, log.",
+    },
+  ]}
+/>
+
+## Vorgehen
+
+<Steps>
+  <Step title="Meldung lesen">
+    Die Meldung nennt den betroffenen Schlüssel und das Problem.
+  </Step>
+  <Step title="config.php korrigieren">
+    Passen Sie den genannten Schlüssel an. Achten Sie auf Tippfehler bei Feld-
+    und Filternamen.
+  </Step>
+  <Step title="Neu laden">
+    Laden Sie das Dashboard neu, um die Konfiguration erneut prüfen zu lassen.
+  </Step>
+</Steps>
+
+<Callout type="info">
+  Bleibt eine Meldung unklar, kontaktieren Sie den simplify-services Support mit
+  dem Wortlaut der Meldung und dem betroffenen Ausschnitt aus `config.php`.
+</Callout>

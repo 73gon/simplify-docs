@@ -1,0 +1,53 @@
+name: CI / Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.6
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Typecheck
+        run: bun run typecheck
+
+      - name: Lint
+        run: bun run lint
+
+      - name: Build (sitemap + vite + pagefind index)
+        run: bun run build
+        env:
+          VITE_SITE_URL: https://docs.simplify-services.de
+
+      - name: Upload build artifact
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-output
+          path: apps/web/.output
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build & push Docker image
+        run: |
+          echo "Build the Docker image and deploy to the self-hosted server."
+          echo "Example:"
+          echo "  docker build -t simplify-docs ."
+          echo "  docker save simplify-docs | ssh deploy@server 'docker load && docker compose up -d'"
+          # Wire up your registry / SSH deploy secrets here.

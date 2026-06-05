@@ -1,0 +1,49 @@
+---
+title: Filter shorthand
+slug: filter-shorthand
+order: 4
+updated: 2026-06-05
+appliesTo: SimpTrack 1.0
+description: Reference of the available filter types.
+---
+
+A column's `filter` key enables a filter in the filter area. The following types
+are available:
+
+<ParamTable
+  rows={[
+    {
+      name: "text",
+      type: "Filter",
+      description: "Free-text search (contains).",
+    },
+    {
+      name: "select",
+      type: "Filter",
+      description: "Dropdown of the column's distinct values.",
+    },
+    {
+      name: "range",
+      type: "Filter",
+      description: "Numeric range filter (from–to).",
+    },
+    { name: "date", type: "Filter", description: "Date range (from–to)." },
+    { name: "bool", type: "Filter", description: "Yes/no toggle." },
+  ]}
+/>
+
+## Example
+
+```php
+$CONFIG['FIELD_MAP'] = [
+  'LIEFERANT'  => ['label' => 'Vendor',   'filter' => 'text'],
+  'STATUS'     => ['label' => 'Status',   'filter' => 'select'],
+  'BETRAG'     => ['label' => 'Amount',   'filter' => 'range', 'align' => 'right'],
+  'FAELLIG_AM' => ['label' => 'Due date', 'filter' => 'date'],
+];
+```
+
+<Callout type="note">
+  For `select`, the options are derived automatically from the existing data in
+  the column — you don't have to maintain a value list.
+</Callout>

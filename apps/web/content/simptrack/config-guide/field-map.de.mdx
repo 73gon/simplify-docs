@@ -1,0 +1,69 @@
+---
+title: FIELD_MAP – Spalten & Filter
+slug: field-map
+order: 3
+updated: 2026-06-05
+appliesTo: SimpTrack 1.0
+description: Spalten definieren und Filter in kompakter Syntax aktivieren.
+---
+
+`FIELD_MAP` definiert, **welche Spalten** angezeigt werden und **wie** sie
+beschriftet sind. In der einfachsten Form ist es eine Zuordnung von Feldname zu
+Anzeigename:
+
+```php
+$CONFIG['FIELD_MAP'] = [
+  'BELEGNUMMER' => 'Belegnr.',
+  'LIEFERANT'   => 'Lieferant',
+  'BETRAG'      => 'Betrag',
+  'FAELLIG_AM'  => 'Fällig am',
+];
+```
+
+## Spalte mit Optionen
+
+Statt eines Strings kann der Wert ein Array mit Optionen sein:
+
+```php
+$CONFIG['FIELD_MAP'] = [
+  'BETRAG' => [
+    'label'  => 'Betrag',
+    'align'  => 'right',
+    'filter' => 'range',
+  ],
+];
+```
+
+## Verfügbare Spaltenoptionen
+
+<ParamTable
+  rows={[
+    { name: "label", type: "string", description: "Anzeigename der Spalte." },
+    {
+      name: "align",
+      type: "'left' | 'right' | 'center'",
+      default: "'left'",
+      description: "Textausrichtung in der Spalte.",
+    },
+    {
+      name: "filter",
+      type: "string",
+      description: "Filtertyp (siehe Filter-Kurzsyntax).",
+    },
+    {
+      name: "hidden",
+      type: "bool",
+      default: "false",
+      description:
+        "Spalte ausblenden, aber für Filter/Export verfügbar halten.",
+    },
+  ]}
+/>
+
+<Callout type="tip">
+  Die Reihenfolge der Einträge in `FIELD_MAP` bestimmt die Standard-Reihenfolge
+  der Spalten. Anwender können sie danach per Drag-and-drop anpassen.
+</Callout>
+
+Die Kurzschreibweise für Filter ist unter
+[Filter-Kurzsyntax](/simptrack/config-guide/filter-shorthand) beschrieben.

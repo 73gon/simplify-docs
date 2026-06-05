@@ -1,0 +1,53 @@
+---
+title: THEME – Branding
+slug: theme
+order: 5
+updated: 2026-06-05
+appliesTo: SimpTrack 1.0
+description: Farben und Erscheinungsbild an das Kunden-CI anpassen.
+---
+
+Über den optionalen Schlüssel `THEME` passen Sie das Erscheinungsbild an das
+Corporate Design des Kunden an. Ohne `THEME` verwendet SimpTrack sein
+Standard-Design.
+
+```php
+$CONFIG['THEME'] = [
+  'primary'   => '#a0ce4e',
+  'radius'    => '0.5rem',
+  'density'   => 'comfortable',
+];
+```
+
+<ParamTable
+  rows={[
+    {
+      name: "primary",
+      type: "string (hex)",
+      default: "'#a0ce4e'",
+      description: "Akzentfarbe für Buttons, aktive Zustände und Links.",
+    },
+    {
+      name: "radius",
+      type: "string",
+      default: "'0.5rem'",
+      description: "Eckenradius der Oberflächenelemente.",
+    },
+    {
+      name: "density",
+      type: "'comfortable' | 'compact'",
+      default: "'comfortable'",
+      description: "Zeilenhöhe der Tabelle.",
+    },
+    {
+      name: "logo",
+      type: "string (url)",
+      description: "Optionales Logo im Kopfbereich des Widgets.",
+    },
+  ]}
+/>
+
+<Callout type="tip">
+  Verwenden Sie als `primary` eine Farbe mit ausreichendem Kontrast, damit Texte
+  auf farbigen Buttons gut lesbar bleiben.
+</Callout>

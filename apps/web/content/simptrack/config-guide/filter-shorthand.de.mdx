@@ -1,0 +1,45 @@
+---
+title: Filter-Kurzsyntax
+slug: filter-shorthand
+order: 4
+updated: 2026-06-05
+appliesTo: SimpTrack 1.0
+description: Referenz der verfügbaren Filtertypen.
+---
+
+Der Schlüssel `filter` einer Spalte aktiviert einen Filter im Filterbereich. Es
+stehen folgende Typen zur Verfügung:
+
+<ParamTable
+  rows={[
+    { name: "text", type: "Filter", description: "Freitextsuche (enthält)." },
+    {
+      name: "select",
+      type: "Filter",
+      description: "Auswahlliste mit eindeutigen Werten der Spalte.",
+    },
+    {
+      name: "range",
+      type: "Filter",
+      description: "Bereichsfilter für Zahlen (von–bis).",
+    },
+    { name: "date", type: "Filter", description: "Datumsbereich (von–bis)." },
+    { name: "bool", type: "Filter", description: "Ja/Nein-Umschalter." },
+  ]}
+/>
+
+## Beispiel
+
+```php
+$CONFIG['FIELD_MAP'] = [
+  'LIEFERANT'  => ['label' => 'Lieferant',  'filter' => 'text'],
+  'STATUS'     => ['label' => 'Status',     'filter' => 'select'],
+  'BETRAG'     => ['label' => 'Betrag',     'filter' => 'range', 'align' => 'right'],
+  'FAELLIG_AM' => ['label' => 'Fällig am',  'filter' => 'date'],
+];
+```
+
+<Callout type="note">
+  Für `select` werden die Auswahlwerte automatisch aus den vorhandenen Daten der
+  Spalte ermittelt – Sie müssen keine Werteliste pflegen.
+</Callout>

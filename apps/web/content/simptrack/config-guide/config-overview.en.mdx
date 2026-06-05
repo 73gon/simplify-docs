@@ -1,0 +1,75 @@
+---
+title: config.php overview
+slug: config-overview
+order: 2
+updated: 2026-06-05
+appliesTo: SimpTrack 1.0
+description: The single source of configuration and its minimum keys.
+---
+
+`config.php` is SimpTrack's **single source of configuration**. It defines the
+data source, the columns, the filters as well as optional branding and
+permissions.
+
+## Minimal configuration
+
+```php
+<?php
+$CONFIG = [];
+
+// 1. Data source
+$CONFIG['DATA_VIEW'] = 'ER_VORGANG';
+
+// 2. Connection
+$CONFIG['BASE_URL']            = 'https://jobrouter.customer.com';
+$CONFIG['TRACKING_PASSPHRASE'] = 'please-change';
+
+// 3. Columns + filters
+$CONFIG['FIELD_MAP'] = [
+  'BELEGNUMMER' => 'Doc no.',
+  'LIEFERANT'   => 'Vendor',
+  'BETRAG'      => 'Amount',
+  'FAELLIG_AM'  => 'Due date',
+];
+```
+
+That is all you need to get started. Every other key has a sensible default.
+
+## Required keys
+
+<ParamTable
+  rows={[
+    {
+      name: "DATA_VIEW",
+      type: "string",
+      required: true,
+      description: "The main view or table containing the processes.",
+    },
+    {
+      name: "BASE_URL",
+      type: "string",
+      required: true,
+      description: "Base URL of the JobRouter installation.",
+    },
+    {
+      name: "TRACKING_PASSPHRASE",
+      type: "string",
+      required: true,
+      description: "Passphrase for securely linking to processes.",
+    },
+    {
+      name: "FIELD_MAP",
+      type: "array",
+      required: true,
+      description: "Columns and filters in compact syntax.",
+    },
+  ]}
+/>
+
+<Callout type="warning">
+  Set `TRACKING_PASSPHRASE` to a unique, secure value for every customer. Never
+  use the example value in production.
+</Callout>
+
+Continue with the columns and filters under
+[FIELD_MAP – columns & filters](/simptrack/config-guide/field-map).
