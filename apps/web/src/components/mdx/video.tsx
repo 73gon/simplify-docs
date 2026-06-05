@@ -4,7 +4,7 @@ export function Video({ src, title }: { src: string; title?: string }) {
   return (
     <div className="my-5 aspect-video overflow-hidden rounded-lg border border-border bg-black">
       {isFile ? (
-        <video src={src} controls className="size-full" />
+        <video src={src} controls className="size-full object-cover" />
       ) : (
         <iframe
           src={src}

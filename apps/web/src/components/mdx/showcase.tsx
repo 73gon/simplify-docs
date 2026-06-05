@@ -50,7 +50,7 @@ export function Showcase({
 
   return (
     <figure className={cn("not-prose my-6", className)}>
-      <div className="overflow-hidden rounded-xl border border-border">
+      <div className="aspect-video overflow-hidden rounded-xl border border-border bg-black">
         {failed ? (
           <div className="flex aspect-video flex-col items-center justify-center gap-2 bg-muted/40 text-center text-sm text-muted-foreground">
             <svg
@@ -88,7 +88,7 @@ export function Showcase({
             playsInline
             preload="metadata"
             onError={() => setFailed(true)}
-            className="block aspect-video w-full"
+            className="size-full object-cover"
             style={{ display: "block" }}
           />
         )}
