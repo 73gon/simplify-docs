@@ -53,16 +53,8 @@ function ProductOverview() {
 
   return (
     <div className="flex min-h-svh flex-col">
-      <Header />
+      <Header productName={product.name} />
       <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-12">
-        <nav className="mb-6 text-xs text-muted-foreground">
-          <AppLink to="/" className="hover:text-foreground">
-            {t("nav.products")}
-          </AppLink>
-          <span className="px-1">/</span>
-          <span className="text-foreground">{product.name}</span>
-        </nav>
-
         <div className="flex flex-wrap items-center gap-3">
           <h1 className="text-3xl font-bold tracking-tight">{product.name}</h1>
           {product.status !== "stable" ? (

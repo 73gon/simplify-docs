@@ -6,7 +6,13 @@ import { SearchButton } from "@/components/search/search-button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { useT } from "@/i18n/context"
 
-export function Header({ onMenu }: { onMenu?: () => void }) {
+export function Header({
+  onMenu,
+  productName,
+}: {
+  onMenu?: () => void
+  productName?: string
+}) {
   const t = useT()
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
@@ -30,7 +36,7 @@ export function Header({ onMenu }: { onMenu?: () => void }) {
           </Button>
         ) : null}
 
-        <Logo />
+        <Logo productName={productName} />
 
         <div className="ml-auto flex items-center gap-2">
           <div className="hidden sm:block">

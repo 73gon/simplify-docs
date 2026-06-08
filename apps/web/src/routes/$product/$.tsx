@@ -92,7 +92,7 @@ function DocPage() {
   const nav = (onNavigate?: () => void) => (
     <div className="flex flex-col gap-6 py-6">
       <Sidebar
-        product={product}
+        productId={productId}
         audience={audience}
         audiences={product.audiences}
         onNavigate={onNavigate}
@@ -103,7 +103,7 @@ function DocPage() {
 
   return (
     <div className="flex min-h-svh flex-col">
-      <Header onMenu={() => setDrawer(true)} />
+      <Header onMenu={() => setDrawer(true)} productName={product.name} />
 
       <div className="mx-auto flex w-full max-w-screen-2xl flex-1 px-4">
         {/* Left: product switch + tree TOC (desktop) */}
@@ -126,14 +126,6 @@ function DocPage() {
 
         {/* Continuous content */}
         <main className="min-w-0 flex-1 px-0 py-8 lg:px-12">
-          <nav className="mb-4 flex flex-wrap items-center gap-1 text-xs text-muted-foreground">
-            <a href={`/${productId}`} className="hover:text-foreground">
-              {product.name}
-            </a>
-            <span aria-hidden>/</span>
-            <span className="text-foreground">{audienceLabel}</span>
-          </nav>
-
           {hasFallback ? (
             <div className="mb-6 rounded-lg border border-amber-300/70 bg-amber-50 p-3 text-sm text-amber-800 dark:border-amber-400/30 dark:bg-amber-500/10 dark:text-amber-300">
               <p className="font-semibold">{t("doc.notTranslatedTitle")}</p>

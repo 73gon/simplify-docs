@@ -14,7 +14,6 @@ key, no row actions are shown.
 $CONFIG['ROW_ACTIONS'] = [
   ['type' => 'history', 'label' => 'History'],
   ['type' => 'invoice', 'label' => 'Invoice'],
-  ['type' => 'log',      'label' => 'Log'],
 ];
 ```
 
@@ -24,7 +23,7 @@ $CONFIG['ROW_ACTIONS'] = [
   rows={[
     {
       name: "type",
-      type: "'history' | 'invoice' | 'log'",
+      type: "'history' | 'invoice'",
       required: true,
       description: "The built-in action to run.",
     },
@@ -37,7 +36,7 @@ $CONFIG['ROW_ACTIONS'] = [
     {
       name: "roles",
       type: "string[]",
-      description: "Restrict to certain roles (see ROW_AUTH).",
+      description: "Restrict to certain roles.",
     },
   ]}
 />

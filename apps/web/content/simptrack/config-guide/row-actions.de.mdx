@@ -14,7 +14,6 @@ Schlüssel werden keine Zeilenaktionen angezeigt.
 $CONFIG['ROW_ACTIONS'] = [
   ['type' => 'history', 'label' => 'Verlauf'],
   ['type' => 'invoice', 'label' => 'Rechnung'],
-  ['type' => 'log',     'label' => 'Protokoll'],
 ];
 ```
 
@@ -24,7 +23,7 @@ $CONFIG['ROW_ACTIONS'] = [
   rows={[
     {
       name: "type",
-      type: "'history' | 'invoice' | 'log'",
+      type: "'history' | 'invoice'",
       required: true,
       description: "Die auszuführende Standardaktion.",
     },
@@ -37,7 +36,7 @@ $CONFIG['ROW_ACTIONS'] = [
     {
       name: "roles",
       type: "string[]",
-      description: "Auf bestimmte Rollen einschränken (siehe ROW_AUTH).",
+      description: "Auf bestimmte Rollen einschränken.",
     },
   ]}
 />
