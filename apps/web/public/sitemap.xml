@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://docs.simplify-services.de/</loc><lastmod>2026-06-05T15:14:55.393Z</lastmod><changefreq>weekly</changefreq></url>
-  <url><loc>https://docs.simplify-services.de/simptrack</loc><lastmod>2026-06-05T15:14:55.393Z</lastmod><changefreq>weekly</changefreq></url>
-  <url><loc>https://docs.simplify-services.de/simptrack/config-guide</loc><lastmod>2026-06-05T15:14:55.393Z</lastmod><changefreq>weekly</changefreq></url>
-  <url><loc>https://docs.simplify-services.de/simptrack/user-manual</loc><lastmod>2026-06-05T15:14:55.393Z</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://docs.simplify-services.de/</loc><lastmod>2026-06-08T13:28:02.074Z</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://docs.simplify-services.de/simptrack</loc><lastmod>2026-06-08T13:28:02.074Z</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://docs.simplify-services.de/simptrack/config-guide</loc><lastmod>2026-06-08T13:28:02.074Z</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://docs.simplify-services.de/simptrack/config-guide/config-overview</loc><lastmod>2026-06-08T13:28:02.074Z</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://docs.simplify-services.de/simptrack/config-guide/errors</loc><lastmod>2026-06-08T13:28:02.074Z</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://docs.simplify-services.de/simptrack/config-guide/field-map</loc><lastmod>2026-06-08T13:28:02.074Z</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://docs.simplify-services.de/simptrack/config-guide/filter-shorthand</loc><lastmod>2026-06-08T13:28:02.074Z</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://docs.simplify-services.de/simptrack/config-guide/installation</loc><lastmod>2026-06-08T13:28:02.074Z</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://docs.simplify-services.de/simptrack/config-guide/row-actions</loc><lastmod>2026-06-08T13:28:02.074Z</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://docs.simplify-services.de/simptrack/config-guide/theme</loc><lastmod>2026-06-08T13:28:02.074Z</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://docs.simplify-services.de/simptrack/config-guide/updating</loc><lastmod>2026-06-08T13:28:02.074Z</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://docs.simplify-services.de/simptrack/user-manual</loc><lastmod>2026-06-08T13:28:02.074Z</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://docs.simplify-services.de/simptrack/user-manual/aktionen</loc><lastmod>2026-06-08T13:28:02.074Z</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://docs.simplify-services.de/simptrack/user-manual/einstellungen</loc><lastmod>2026-06-08T13:28:02.074Z</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://docs.simplify-services.de/simptrack/user-manual/faq</loc><lastmod>2026-06-08T13:28:02.074Z</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://docs.simplify-services.de/simptrack/user-manual/filter</loc><lastmod>2026-06-08T13:28:02.074Z</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://docs.simplify-services.de/simptrack/user-manual/filtervorlagen</loc><lastmod>2026-06-08T13:28:02.074Z</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://docs.simplify-services.de/simptrack/user-manual/navigation</loc><lastmod>2026-06-08T13:28:02.074Z</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://docs.simplify-services.de/simptrack/user-manual/seitennavigation</loc><lastmod>2026-06-08T13:28:02.074Z</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://docs.simplify-services.de/simptrack/user-manual/uebersicht</loc><lastmod>2026-06-08T13:28:02.074Z</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://docs.simplify-services.de/simptrack/user-manual/werkzeugleiste</loc><lastmod>2026-06-08T13:28:02.074Z</lastmod><changefreq>weekly</changefreq></url>
 </urlset>

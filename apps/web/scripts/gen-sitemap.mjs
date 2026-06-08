@@ -34,6 +34,12 @@ for (const product of safeReaddir(CONTENT_DIR)) {
       /\.[a-z]{2}\.mdx$/.test(f)
     )
     if (hasDocs) paths.add(`/${product}/${audienceSegment}`)
+
+    for (const file of safeReaddir(audienceDir)) {
+      if (!/\.[a-z]{2}\.mdx$/.test(file)) continue
+      const slug = file.replace(/\.[a-z]{2}\.mdx$/, "")
+      paths.add(`/${product}/${audienceSegment}/${slug}`)
+    }
   }
 }
 

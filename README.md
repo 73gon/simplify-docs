@@ -40,6 +40,29 @@ docker build -t simplify-docs .
 docker run -p 3000:3000 simplify-docs
 ```
 
+## GitHub Pages
+
+The repository includes a GitHub Actions workflow at
+`.github/workflows/deploy.yml`.
+
+On pushes to `main`, the workflow:
+
+1. installs dependencies with Bun,
+2. runs typecheck and lint,
+3. builds the static site,
+4. uploads `apps/web/dist/client` as the GitHub Pages artifact,
+5. deploys it with GitHub Pages.
+
+Configure the repository's Pages source to **GitHub Actions**. For production,
+set the repository variable `VITE_SITE_URL` to the public origin, for example
+`https://docs.simplify-services.de`, so canonical URLs, Open Graph URLs and the
+sitemap use the correct host.
+
+This app currently expects to be served from the domain root. Use a custom
+domain such as `docs.simplify-services.de` for GitHub Pages. Serving from a
+project subpath such as `https://OWNER.github.io/REPO/` requires an additional
+base-path configuration pass.
+
 ## Authoring docs
 
 See [apps/web/content/AUTHORING.md](apps/web/content/AUTHORING.md) for the content

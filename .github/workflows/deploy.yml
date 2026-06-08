@@ -1,10 +1,20 @@
-name: CI / Deploy
+name: CI / GitHub Pages
 
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -25,29 +35,29 @@ jobs:
       - name: Lint
         run: bun run lint
 
-      - name: Build (sitemap + vite + pagefind index)
+      - name: Build static site
         run: bun run build
         env:
-          VITE_SITE_URL: https://docs.simplify-services.de
+          VITE_SITE_URL: ${{ vars.VITE_SITE_URL || 'https://docs.simplify-services.de' }}
 
-      - name: Upload build artifact
-        if: github.ref == 'refs/heads/main'
-        uses: actions/upload-artifact@v4
+      - name: Configure GitHub Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: web-output
-          path: apps/web/.output
+          path: apps/web/dist/client
 
   deploy:
     needs: build
-    if: github.ref == 'refs/heads/main'
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Build & push Docker image
-        run: |
-          echo "Build the Docker image and deploy to the self-hosted server."
-          echo "Example:"
-          echo "  docker build -t simplify-docs ."
-          echo "  docker save simplify-docs | ssh deploy@server 'docker load && docker compose up -d'"
-          # Wire up your registry / SSH deploy secrets here.
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
